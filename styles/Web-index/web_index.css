@@ -78,7 +78,7 @@ hr {
 /** WRAPPER */
 
 
-box-shadow: 
+box-shadow: {
         inset 0px 11px 8px -20px #CCC,
         inset 0px -11px 8px -10px #CCC;}
 
