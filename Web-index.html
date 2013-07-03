@@ -55,7 +55,7 @@
 					<li><a onclick="weblar()" style="cursor:pointer">Web-lar</a></li>
 					<li><a id="webindex-link-contact" href="#">Contact</a></li>
 					<li><a id="webindex-link-about" href="#">About</a></li>
-					<li><a href="index.html?#home"  title="home">Home</a></li>
+					<li><a href="bihomed.html?#home"  title="home">Home</a></li>
 
 				</ul>
 			
@@ -181,11 +181,12 @@
 
 
 <!-- fine context -->
-<div style="float:left;bottom:0">
-	<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" >
+<div id="console-index" style="float:left;bottom:0;position:fixed" ><!-- position:fixed before click show console then the property relative
+-->
+	<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();">
 </div>
 
-<div id="consl" style="display:none">  
+<div id="consl" style="display:none;">  
 	
 <form><textarea id="code" name="code">
 		//Write Here

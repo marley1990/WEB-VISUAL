@@ -73,7 +73,8 @@ function print(children, lvl, type, description, id, name) {
         st.push(
             space2Draw.circle(xChildren, yChildren, 20).click((function (children, i) {
                 return function () {
-                    window.open("index-point.html");
+                    window.open("index-point.html?id="+i+"&type="+type+"&description="+description+
+                        "&name="+name);
                     //array[i] is undefined
                     //alert("ARRAY[i]===" + children[i]);
                     //retrive(array[i]);
@@ -135,7 +136,8 @@ function print(children, lvl, type, description, id, name) {
                 space2Draw.circle(xLevels, yLevels, 20).click((function (lvl,a,j) {
                     return function () {
 
-                        window.open("index-point.html");
+                        window.open("index-point.html?id="+lvl[j][a]+"&type="+type+"&description="+description+
+                        "&name="+name);
                         //array[i] is undefined
                         //alert("LVL[i][j]===" + lvl[j][a]);
                         //retrive(array[i]);

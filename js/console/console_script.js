@@ -56,14 +56,14 @@ document.getElementById("consl").style.top="100px";
 }
  function toggleConsole() {
         var el = document.getElementById("consl");
-        var body = document.getElementById("webindex")
-
-        if(body !== null && document.body.style.overflow == 'hidden'){
-        document.body.style.overflow = 'auto';}
+        var body = document.getElementById("webindex");
+        
+        if(body !== null && document.getElementById("console-index").style.position=="fixed"){
+         document.getElementById("console-index").style.position = "relative";}
 
         if (el.style.display !== 'none') {
             if(body !==null){
-            document.getElementById("webindex").style.overflow = 'hidden';
+            document.getElementById("console-index").style.position = "fixed";
         }
             el.style.display = 'none';
             editor.refresh();
