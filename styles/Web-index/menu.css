@@ -5,6 +5,8 @@
 	float: right;
 	top:0;
 	height: 100%;
+	position: absolute;
+	right: 0;
 }
 
 /*menu-drop*/
@@ -19,6 +21,7 @@ ul#menu-drop {
 	background-color: #3A5896 ;
 	font-size:1em;
 	bottom:0;
+	right:0;
 }
 
 ul#menu-drop li {
