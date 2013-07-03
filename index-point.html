@@ -3,9 +3,10 @@
 <title>Web</title>
 
 <link href="styles/Web-index/web_index.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript"  src="js/web_index/DrawCluster.js"></script>
 
 </head> 
-<body style="overflow : hidden">
+<body style="overflow : hidden" onLoad="retrieveCluster()">
 <!-- header web-index -->
 <div id="header-wrapper">
 	<div id="header">
@@ -23,9 +24,16 @@
     <!-- plasm -->
 
 <div id="page-wrapper">
+			<script>
+        var url = location.search.replace(/%20/g," ");
+        var type = url.split("&")[1].split("=")[1];
+        var description = url.split("&")[2].split("=")[1];
+        var name = url.split("&")[3].split("=")[1];
+        var id = url.split("&")[4].split("=")[1];
+        document.write("<div style='height : 10px; margin-top:5px'><p align='center'><font size="+3+" >View cluster's point with Type: "+type+"; id: "+id+"; name: "+name+"; description: "+description+"</font></p></div>");
+      </script>
 			
-				<p> View cluster's point with Type: modello Id: modello1 Name: modello text Description: prototipo </p>
-				<div id="plasm"></div>
+				<div id="plasm" ></div>
 
 
 
