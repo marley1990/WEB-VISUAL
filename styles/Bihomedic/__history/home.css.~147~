@@ -103,7 +103,7 @@ hr {
 	z-index: 1000;
 }
 #text{
-	position:relative;
+	
 }
 
 #header {

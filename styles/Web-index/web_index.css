@@ -120,7 +120,7 @@ box-shadow: {
 	height: 40px;
 	padding: 0px 0px 0px 40px;
 	left:0;
-	position:fixed;
+	position:absolute;
 }
 
 #logo h1 {

@@ -102,9 +102,6 @@ hr {
 	position: fixed;
 	z-index: 1000;
 }
-#text{
-	position:relative;
-}
 
 #header {
 
