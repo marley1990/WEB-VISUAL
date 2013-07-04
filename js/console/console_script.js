@@ -18,6 +18,18 @@
             alert("javascript");
     }
 
+  function cl() {
+  //    editor=cm.toTextArea();
+  var codeeliminate = editor.getValue();
+  alert(codeeliminate);
+  //alert(editornull.getValue());
+   editor.setText("");
+      if (editor.getOption("mode") === "coffeescript")
+            alert("coffeescript");
+        if (editor.getOption("mode") === "javascript")
+            alert("javascript");
+   }
+
     function coffeeMode() {
         jsb.style.display = "inline";
         csb.style.display = "none";
@@ -32,21 +44,40 @@
         CodeMirror.autoLoadMode(editor, "javascript");
     }
     
+  
+    
     /*Execute the code*/
     function exec() {
 
         var code = editor.getValue();
                 
               if(editor.getOption("mode") === "coffeescript") {
-              var js = CoffeeScript.compile(code)
+              try{var js = CoffeeScript.compile(code)
                var f = new Function(js);
                f();
-               
+              }
+              catch(err)
+  {
+  txt="There was an error on this page.\n";
+  txt+="Error description:   " + err.message + "\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
                
             } else if(editor.getOption("mode") === "javascript") {
-               var f = new Function(code);
+              try{ var f = new Function(code);
                f();
+           }
+           catch(err)
+  {
+  txt="There was an error on this page.\n";
+  txt+="Error description:   " + err.message + "\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
             }
+           // cl();
+            
         }
 
 
@@ -56,14 +87,14 @@ document.getElementById("consl").style.top="100px";
 }
  function toggleConsole() {
         var el = document.getElementById("consl");
-        var body = document.getElementById("webindex");
-        
-        if(body !== null && document.getElementById("console-index").style.position=="fixed"){
-         document.getElementById("console-index").style.position = "relative";}
+        var body = document.getElementById("webindex")
+
+        if(body !== null && document.body.style.overflow == 'hidden'){
+        document.body.style.overflow = 'auto';}
 
         if (el.style.display !== 'none') {
             if(body !==null){
-            document.getElementById("console-index").style.position = "fixed";
+            document.getElementById("webindex").style.overflow = 'hidden';
         }
             el.style.display = 'none';
             editor.refresh();

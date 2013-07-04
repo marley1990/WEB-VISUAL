@@ -4,12 +4,14 @@ root {
 }
 div[id=showConsole] {
     z-index: 2;
-    bottom: 0;
+
+    bottom: 0px;
 }
 div[id=consl] {
 
     width: 99%;
-    bottom: 0;
+    top:65%;
+/*    bottom: -22.5%;*/
     margin-left: 2%; 
 }
 
@@ -41,5 +43,4 @@ div[id=consl] {
 }#showConsole:active {
 	position:relative;
 	top:1px;
-}
 }
