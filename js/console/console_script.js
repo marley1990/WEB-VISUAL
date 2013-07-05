@@ -20,16 +20,20 @@
 
   function cl() {
   //    editor=cm.toTextArea();
+  var a="\n\
+"
   var codeeliminate = editor.getValue();
-  alert(codeeliminate);
-  //alert(editornull.getValue());
-   editor.setText("");
-      if (editor.getOption("mode") === "coffeescript")
-            alert("coffeescript");
-        if (editor.getOption("mode") === "javascript")
-            alert("javascript");
+  alert("The Code that will be deleted is :  "+codeeliminate);
+     //alert(editornull.getValue());
+   editor.setValue("   // Write Here"+a+a+a+"  ")
    }
-
+function cl_alert(){
+   var a="\n\
+"
+  
+   editor.setValue("   // Write Here"+a+a+a+"  ")
+    
+}
     function coffeeMode() {
         jsb.style.display = "inline";
         csb.style.display = "none";
@@ -50,16 +54,23 @@
     
   
     
-    /*Execute the code*/
-    function exec() {
-
+function exec() {
+var a="\n\
+";
         var code = editor.getValue();
-                
+        var codex=editor.getValue();   
+        
               if(editor.getOption("mode") === "coffeescript") {
-              try{var js = CoffeeScript.compile(code)
+              try{
+                  codex=codex.replace("###", "");
+                codex="###"+a+codex+a+"###";
+                var js = CoffeeScript.compile(code);
+                  
                var f = new Function(js);
                f();
-              }
+               cl_alert();
+               editor.setValue(codex);
+            }
               catch(err)
   {
   txt="There was an error on this page.\n";
@@ -69,8 +80,14 @@
   }
                
             } else if(editor.getOption("mode") === "javascript") {
-              try{ var f = new Function(code);
+              try{ 
+                  codex=codex.replace("/*", "");
+                  codex=codex.replace("*/", "");
+                   codex="/*"+a+codex+a+"*/";
+                  var f = new Function(code);
                f();
+               cl_alert();
+               editor.setValue(""+codex);
            }
            catch(err)
   {
@@ -102,9 +119,10 @@ document.getElementById("consl").style.top="100px";
             document.getElementById("console-index").style.position= 'fixed';
         }
             el.style.display = 'none';
-            editor.refresh();
             var label = document.getElementById("label-console");
             label.innerHTML = ""
+            editor.refresh();
+
 
         }
         else {
@@ -129,7 +147,10 @@ document.getElementById("consl").style.top="100px";
 
         // btn.value='OpenConsole';
         if(tab.style.display=='none'){
-        tab.style.display='inline'}
+        tab.style.display='inline';
+        var label = document.getElementById("label-console");
+        label.innerHTML = editor.getOption("mode");
+      }
        
         if(body !== null && document.body.style.overflow == 'hidden'){
         document.body.style.overflow = 'auto';}
@@ -139,15 +160,19 @@ document.getElementById("consl").style.top="100px";
             document.getElementById("webindex").style.overflow = 'hidden';
         }
             el.style.display = 'none';
+            var label = document.getElementById("label-console");
+            label.innerHTML = ""
             editor.refresh();
+
         }
         else {
             el.style.display = 'inline';
             tab.style.display = 'none';
             el.style.float = 'left'
 
-
              el.style.position = "absolute";
+         var label = document.getElementById("label-console");
+        label.innerHTML = editor.getOption("mode");
             // btn.style.position="absolute";
             // btn.value='OpenConsole2212';
             editor.refresh();

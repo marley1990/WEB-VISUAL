@@ -45,10 +45,10 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 hgroup,
 nav,
+footer,
 section {
   display: block;
 }

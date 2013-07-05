@@ -44,3 +44,7 @@ div[id=consl] {
 	position:relative;
 	top:1px;
 }
+#lable-console{
+	display: inline;
+	font-size: 5em;
+}

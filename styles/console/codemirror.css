@@ -84,8 +84,10 @@ font-size: 20px;}
 font-size: 20px;font-weight:bold;}
 .cm-s-default .cm-operator {color: blue;
 font-size: 20px;font-weight:bold;}
-.cm-s-default .cm-comment {color: #FF7F24;
-font-size: 20px;font-weight:bold;}
+.cm-s-default .cm-comment {color: gray;
+font-size: 12px;
+opacity: 0.5;
+}
 .cm-s-default .cm-string {color: green;
   font-size: 20px;font-weight:bold;}
 .cm-s-default .cm-string-2 {color:green;

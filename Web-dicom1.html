@@ -332,7 +332,7 @@
 										<!-- footer -->
 										<footer class="footer">
 											<div style="float:left">
-												<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" >
+												<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" ><label id="label-console" for="" style="display:inline;font-size:1.3em;color:#FFF"></label>
 											</div>
 											<div id="menu">
 												<ul class="nav">
@@ -343,14 +343,14 @@
 												</ul>
 											</div>
 											<div id="consl" style="display:none; float: left;">  
-												<form><textarea id="code" name="code" >
+												<form name="form" id="form"><textarea id="code" name="code" >
 													//Write Here
 												</textarea></form>
 
 												<input id="exec" type="button" value="Exec" onclick="exec();"/>
 												<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
 												<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();">
-												<input id="undo" type="button" value="Undo" onclick=""/>
+													  <input id="clear" type="button" value="Clear" onclick="cl()"/>
 												<input id="verify" type="button" value="Verify" onclick="test();"/>
 											</div>
 

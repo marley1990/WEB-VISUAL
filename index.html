@@ -81,12 +81,12 @@
 
 <p align="center">&nbsp;</p>
 <ul>
-			<div id="tab" style="display:inline" >
+			<div style="display:inline" >
 			<p style="float:left">
-			<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsolehome();">
+			<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();"><label id="label-console" for=""style="display:inline;font-size:1.3em"></label>
 			</p>
 			<p style="float:right">
-			<a href="https://zar777.github.io/Bihomed" class="buttons">Molecule</a>
+			<a href="http://zar777.github.io/biomedic/" class="buttons">Molecule</a>
 
 			</p>
 			<p align="center">
@@ -94,30 +94,22 @@
 			<a href="Web-dicom.html" class="buttons">Web-Dicom</a>
 			<a href="Web-lar.html" class="buttons">Web-Lar</a>
 			</p>
-			
+				</ul>
+<div id="consl" style="display:none;">  
+	
+<form  name="form" id="form" ><textarea id="code" name="code">
+		//Write Here
+	</textarea></form>
 
-	</ul>
+	<input id="exec" type="button" value="Exec" onclick="exec();"/>
+	<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
+	<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();">
+	  <input id="clear" type="button" value="Clear" onclick="cl()"/>
+	<input id="verify" type="button" value="Verify" onclick="test();"/>
+
+</div>
+
 </div></div>
-<!-- fine context -->
-		<div id="consl" style="display:none" >
-			<ul>
-		<p style="float:left">
-		<input id="showConsole" type="button" value="CloseConsole" onclick="toggleConsolehome();">
-		<a href="Web-index.html" class="buttons">Web-Index</a>
-		<a href="Web-dicom.html" class="buttons">Web-Dicom</a>
-		<a href="Web-lar.html" class="buttons">Web-Lar</a>
-		</p>
-
-			<form><textarea id="code" name="code">
-				//Write Here
-			</textarea></form>
-
-			<input id="exec" type="button" value="Exec" onclick="exec();"/>
-			<input id="coffeeScriptButton" type="button" value="CoffeeScript" onclick="coffeeMode();"/>
-			<input id="javaScriptButton" type="button" value="JavaScript" style="display:none" onclick="javascriptMode();">
-
-			<input id="verify" type="button" value="ModeChecker" onclick="test();"/>
-		</div>
 <!-- footer start-->
 		<div id="footer">
 											Copyright (c) 2013</div>

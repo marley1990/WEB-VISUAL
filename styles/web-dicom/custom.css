@@ -1,12 +1,17 @@
-
+/*
 #footer {
 	height: 50px;
 	background-color: #3A5896;
         text-align: center;
 	width: 1286px
 
-} 
+} */
 
+
+	#footer {
+		background-color: #3A5896;
+		text-align: center;
+	} 
 
 .preview{
 	height: 300px;
