@@ -34,13 +34,17 @@
         jsb.style.display = "inline";
         csb.style.display = "none";
         editor.setOption("mode", "coffeescript");
+        var label = document.getElementById("label-console");
+      label.innerHTML = editor.getOption("mode")
         CodeMirror.autoLoadMode(editor, "coffeescript");
     }
 
     function javascriptMode() {
         csb.style.display = "inline";
         jsb.style.display = "none";
+        var label = document.getElementById("label-console");
         editor.setOption("mode", "javascript");
+        label.innerHTML = editor.getOption("mode")
         CodeMirror.autoLoadMode(editor, "javascript");
     }
     
@@ -90,7 +94,8 @@ document.getElementById("consl").style.top="100px";
         var body = document.getElementById("webindex")
 
         if(body !== null && document.getElementById("console-index").style.position == 'fixed'){
-        document.getElementById("console-index").style.position = 'relative';}
+        document.getElementById("console-index").style.position = 'relative';
+      }
 
         if (el.style.display !== 'none') {
             if(body !==null){
@@ -98,11 +103,16 @@ document.getElementById("consl").style.top="100px";
         }
             el.style.display = 'none';
             editor.refresh();
+            var label = document.getElementById("label-console");
+            label.innerHTML = ""
+
         }
         else {
             el.style.display = 'inline';
             el.style.float = 'left'
             editor.refresh();
+             var label = document.getElementById("label-console");
+            label.innerHTML = editor.getOption("mode")
         }
 
     }
@@ -173,3 +183,4 @@ document.getElementById("consl").style.top="100px";
     function weblar() {
         window.location.href = "Web-lar.html";
     };
+
