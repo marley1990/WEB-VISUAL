@@ -108,7 +108,8 @@ document.getElementById("consl").style.top="100px";
 }
  function toggleConsole() {
         var el = document.getElementById("consl");
-        var body = document.getElementById("webindex")
+        var body = document.getElementById("webindex");
+        var btn = document.getElementById("showConsole");
 
         if(body !== null && document.getElementById("console-index").style.position == 'fixed'){
         document.getElementById("console-index").style.position = 'relative';
@@ -120,8 +121,9 @@ document.getElementById("consl").style.top="100px";
         }
             el.style.display = 'none';
             var label = document.getElementById("label-console");
-            label.innerHTML = ""
+            label.innerHTML = "";
             editor.refresh();
+            btn.setAttribute("value","OpenConsole");
 
 
         }
@@ -130,7 +132,8 @@ document.getElementById("consl").style.top="100px";
             el.style.float = 'left'
             editor.refresh();
              var label = document.getElementById("label-console");
-            label.innerHTML = editor.getOption("mode")
+            label.innerHTML = editor.getOption("mode");
+            btn.setAttribute("value","CloseConsole");
         }
 
     }
@@ -139,7 +142,7 @@ document.getElementById("consl").style.top="100px";
 
         var el = document.getElementById("consl")
         var body = document.getElementById("webindex")
-        var btn = document.getElementById("showConsole")
+        
         var  tab=document.getElementById("tab")
        
 
