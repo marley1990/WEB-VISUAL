@@ -6141,3 +6141,96 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+
+
+
+/* about */
+
+#webdicom-container-about {
+  top: 40px;
+  width: 380px;
+  left: 0px;
+  right: 0px;
+  /*line-height: 1;*/
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align:middle;
+  z-index: 1000;
+}
+
+#webdicom-container-contact {
+  top: 40px;
+  width: 380px;
+  left: 0px;
+  right: 0px;
+  /*line-height: 1;*/
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align:middle;
+  z-index: 1000;
+}
+
+.webdicom-container {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  overflow: scroll;
+  padding: 10px;
+  background-color: rgba(222,222,222,0.7);
+  box-shadow: 1px 1px 8px 1px #777;
+
+}
+
+.icon-close {
+  width: 16px;
+  height: 16px;
+  background: url(../images/close.png) no-repeat;
+  background-size: 100%;
+}
+
+#webdicom-icon-close {
+  position: absolute;
+  background-size: 100%;
+  top: 10px;
+  right: 10px;
+
+}
+
+#webdicom-icon-close:hover {
+  position: absolute;
+  background-size: 100%;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: .2;
+}
+
+.icon-contact-close {
+  width: 16px;
+  height: 16px;
+  background: url(../images/close.png) no-repeat;
+  background-size: 100%;
+}
+
+
+#webdicom-icon-contact-close {
+  position: absolute;
+  background-size: 100%;
+  top: 10px;
+  right: 10px;
+
+}
+
+#webdicom-icon-contact-close:hover {
+  position: absolute;
+  background-size: 100%;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  opacity: .2;
+}
+#webdicom-copyright {
+  margin-top: 20px;
+}
+

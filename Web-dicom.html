@@ -58,6 +58,7 @@
     <script type="text/javascript" src="js/jsDicom/utilities.js"></script>
     <script type="text/javascript" src="js/jsDicom/dcmseries.js"></script>
     <script type="text/javascript" src="js/jsDicom/presentation.js"></script>
+    <script type="text/javascript" src="js/jsDicom/webDicom-env.js"></script>
 
     <script type="text/javascript">
 
@@ -179,7 +180,37 @@
 
 
     <div id="contenitore" style="position:relative">
+    
+     <div id="webdicom-container-about-wrapper">
+        <div id="webdicom-container-about" class="webdicom-container">
+            <div>
+                <div id="webdicom-logo"><span>Web-Index</span></div>
+            </div>
+            <div id="webdicom-icon-close" class="icon-close"></div>
+            <div id="webdicom-copyright">
+                <p> Web-index is a web application created by a group of student of University Roma Tre</p>
+                <p> Student Group :</p><ul type="disc"><li>Andrea Barbadoro</li><li>Andrea Patrizia</li><li>Francesco Maglia</li>
+                <li>Ilario Maiolo</li><li>Matteo Cannaviccio</li><li>Sara Vagnarelli</li></ul></p></br>
+                <p> Project: </p><ul type="disc"><li>Analysis of major approaches to spatial indexing of large point data-sets</li>
+                    <li>JSON paging of large geometric datasets using MongoDB</li>
+                    <li>implementation of <a href="http://en.wikipedia.org/wiki/Hilbert_curve">Hilbert</a> and <a href="http://en.wikipedia.org/wiki/Z-order_(curve" >Lebesgue curve or z-order</a> curve and indices</li>
+                    <li>Strassen multiplication of matrices with Z-order</li></ul></p>
+            </div>
+        </div>
+    </div>
 
+    <div id="webdicom-container-about-wrapper">
+        <div id="webdicom-container-contact" class="webdicom-container">
+            <div>
+                <div id="webdicom-logo"><span>Web-Index contact</span></div>
+            </div>
+            <div id="webdicom-icon-contact-close" class="icon-contact-close"></div>
+            <div id="webdicom-copyright">
+                <p> Web page designer:</p></br><p>Marco Barbieri email : marco90barbieri@gmail.com</p></br>
+                <p> Function developers:</p></br><p> Altre email</p></br>
+            </div>
+        </div>
+    </div>
         <!-- Button to trigger modal -->
         <a style="display:none" href="#myModal" id="load"role="button" class="btn" data-toggle="modal">Launch demo modal</a>
 
@@ -222,8 +253,8 @@
                 <div id="menu">
                     <ul>                <li><a href="Web-dicom1.html">Image-Decomposition</a></li>
                         <li><a href="bihomed.html?#home"  title="home">Home</a></li>
-                        <li><a id="weblar-link-about" href="#">About</a></li>
-                        <li><a id="weblar-link-contact" href="#">Contact</a></li>
+                        <li><a id="webdicom-link-about" href="#">About</a></li>
+                        <li><a id="webdicom-link-contact" href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
