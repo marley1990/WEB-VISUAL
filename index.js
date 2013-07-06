@@ -120,5 +120,3 @@ ui.button_next.setAttribute('disabled', 'disabled');
 
 ui.button_eval.onclick = on_click_eval;
 ui.button_eval.setAttribute('disabled', 'disabled');
-
-ui.button_about.onclick = on_click_about;
