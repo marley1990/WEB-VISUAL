@@ -23,9 +23,7 @@ $(function () {
 
   contactButton.on('click', function () {
     clear();
-    contactContainer.show();
-
-  
+    contactContainer.show();  
   });
 
   aboutButton.on('click', function () {

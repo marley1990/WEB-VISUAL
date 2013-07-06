@@ -54,8 +54,7 @@
 			</div>
 			<div id="weblar-icon-contact-close" class="icon-close"></div>
 			<div id="weblar-copyright">
-				<p> Web page designer:</p></br><p>Antonello Gatto email : antonello.gatto@gmail.com</p></br>
-				<p> Function developers:</p></br><p> Altre email</p></br>
+				<p> Web page designer: Antonello Gatto</p><p>email : antonello.gatto@gmail.com</p>
 			</div>
 		</div>
 	</div>
@@ -81,6 +80,8 @@
 			<a id="example_05" href="examples/example_05.js" download>example 05</a>
 			<span>-</span>
 			<a id="example_06" href="examples/example_06.js" download>example 06</a>
+			<span>-</span>
+			<a id="example_07" href="examples/example_07.js" download>example 07</a>
 			<div id="div_framerate" style="float:right"></div>
 		</div>
 		<br>
@@ -115,6 +116,15 @@
 	<script src="lib/plasm-fun.js"></script>
 	<script src="lib/lar.js"></script>
 	
+  <script src="lib/coo.js"></script>
+  <script src="lib/csr.js"></script>
+  <script src="lib/matrix_product.js"></script>
+  <script src="lib/matrix_util_accel.js"></script>
+  <script src="lib/matrix_util_accel_json.js"></script>
+  <script src="lib/larFacets_simple.js"></script>
+  <script src="lib/larFacets_advanced.js"></script>
+  <script src="lib/larProduct_simple.js"></script>
+
 	<script src="index.js"></script>
 
 	<script src="js/console/codemirror.js"></script>
@@ -144,7 +154,7 @@
 	<!-- footer -->
 	<footer class="footer">
 		<div style="float:left">
-			<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" ><label id="label-console" for="" style="display:inline;color:#FFF;font-size:1.3em"></label>
+			<input id="showConsole" type="button" value="OpenConsole" onclick="toggleConsole();" ><label id="label-console" for="" style="display:inline;color:#FFF;font-size:1.3em;font-variant: small-caps"></label>
 		</div>
 		<div id="menu">
 			<ul class="nav">
@@ -165,8 +175,6 @@
 				  <input id="clear" type="button" value="Clear" onclick="cl()"/>
 			<input id="verify" type="button" value="ModeChecker" onclick="test();"/>
 		</div>
-
-
 
 		<script>
 		/*Testing var*/

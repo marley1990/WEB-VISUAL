@@ -190,8 +190,7 @@ h2 {
 #weblar-container-about {
   top: 40px;
   width: 380px;
-  left: 0px;
-  right: 0px;
+  right: 13%;
   /*line-height: 1;*/
   margin-left: auto;
   margin-right: auto;
@@ -201,8 +200,7 @@ h2 {
 #weblar-container-contact {
   top: 40px;
   width: 380px;
-  left: 0px;
-  right: 0px;
+  right: 3%;
   /*line-height: 1;*/
   margin-left: auto;
   margin-right: auto;
@@ -213,11 +211,9 @@ h2 {
   position: absolute;
   z-index: 1000;
   display: none;
-  overflow: scroll;
   padding: 10px;
   background-color: rgba(222,222,222,0.8);
   box-shadow: 1px 1px 8px 1px #777;
-
 }
 
 .icon-close {
