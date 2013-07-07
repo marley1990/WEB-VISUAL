@@ -120,7 +120,7 @@ function create_image_infobox(viewarea) {
     var infodiv = document.createElement('div');
     infodiv.id = 'infobox';
     infodiv.style.position = "absolute";
-    infodiv.style.top = "150px";
+    infodiv.style.top = "170px";
     infodiv.style.color = "white";
     infodiv.style.fontSize = "14px";
     var infolist = document.createElement('ul');
