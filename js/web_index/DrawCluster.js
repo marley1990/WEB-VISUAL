@@ -6,7 +6,6 @@
         id = queryString.split("?");
         id = id[1].split("=");
         id = id[1].split("&");
-        alert(id[0]);
         return id[0];
 
        
@@ -23,14 +22,24 @@ function retrieveCluster() {
 
     var idCluster = retriveIdCluster();
      $(function () {
-        $.ajax({ //'http://localhost:28017/ilariomaiolodb/documents/?filter_type=cluster&id=' + idCluster.toString(),
-            url: 'http://localhost:28017/test/documents/?filter_type=cluster&filter_id=' + idCluster.toString(),
+            var query = {
+           type:"cluster",
+           id: parseInt(idCluster)
+        }
+                $.ajax({ //'http://localhost:28017/ilariomaiolodb/documents/?filter_type=cluster&id=' + idCluster.toString(),
+             url:'https://api.mongohq.com/databases/testMarco/collections/documents/documents',
             type: 'get',
-            dataType: 'jsonp',
-            jsonp: 'jsonp', // mongod is expecting the parameter name to be called "jsonp"
+            data:{
+                  _apikey:"bb65hmp1vtvu49shsqjf",
+                  q:JSON.stringify(query)
+            },
+            dataType: 'json',
             success: function (data) {
 
-                var result = data["rows"][0];
+                var result = data[0];
+                if(typeof(result) === "undefined"){
+                    alert("id doesn't exist")
+                }else{
                 var vertices = result["vertices"];
                 var v_attributes = result["v_attributes"];
                 var vertices_transformation = result["vertices_transformation"];
@@ -47,7 +56,7 @@ function retrieveCluster() {
                    Draw(a, v_attributes);
                     }
  
-            },
+            }},
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 //console.log('error', errorThrown);
 				alert("SI E' VERIFICATO UN ERRORE DI RETE")

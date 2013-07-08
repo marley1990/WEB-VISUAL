@@ -73,7 +73,7 @@ function print(children, lvl, type, description, id, name) {
         st.push(
             space2Draw.circle(xChildren, yChildren, 20).click((function (children, i) {
                 return function () {
-                    window.open("index-point.html?id="+i+"&type="+type+"&description="+description+
+                    window.open("index-point.html?id="+(i+1)+"&type="+type+"&description="+description+
                         "&name="+name);
                     //array[i] is undefined
                     //alert("ARRAY[i]===" + children[i]);

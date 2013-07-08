@@ -2,24 +2,30 @@ function retriveJsonDocument() {
     clearDivResult();
     $(function () {
         var value = document.getElementById('inputModelId').value;
-        $.ajax({ //'http://localhost:28017/ilariomaiolodb/documents/?filter_id=modello'.concat(value),
-            url:'http://localhost:28017/test/documents/?filter_id=modello'.concat(value),
+        var query = {
+                id:"modello".concat(value)
+        }
+        $.ajax({ 
+            url:'https://api.mongohq.com/databases/testMarco/collections/documents/documents',
             type: 'get',
-            dataType: 'jsonp',
-            jsonp: 'jsonp', // mongod is expecting the parameter name to be called "jsonp"
+            data:{
+                  _apikey:"bb65hmp1vtvu49shsqjf",
+                  q:JSON.stringify(query)
+            },
+            dataType: 'json',
             success: function (data) {
-                
+                data = data[0]
                 //if the document doesn't exist launch an alert
-                if (typeof (data["rows"][0]) === "undefined") {
+                if (typeof (data) === "undefined") {
                     alert("doesn't exist a model with id : " + value)
                 } else {
 
                     //Retrive clusters_tree 
-                    var clustersTree = data["rows"][0]["clusters_tree"];
-                    var type = data["rows"][0]["type"];
-                    var description = data["rows"][0]["description"];
-                    var id = data["rows"][0]["id"];
-                    var name = data["rows"][0]["name"];
+                    var clustersTree = data["clusters_tree"];
+                    var type = data["type"];
+                    var description = data["description"];
+                    var id = data["id"];
+                    var name = data["name"];
 
                     //Print tree
                     createTree(clustersTree, type, description, id, name);

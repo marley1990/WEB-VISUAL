@@ -1,25 +1,32 @@
 function allModel() {
     clearDivPreview()
     $(function () {
+          var query = {
+           type:"model"
+        }
         $.ajax({ //'http://localhost:28017/ilariomaiolodb/documents/?filter_type=model'
-            url:'http://localhost:28017/test/documents/?filter_type=model',
+             url:'https://api.mongohq.com/databases/testMarco/collections/documents/documents',
             type: 'get',
-            dataType: 'jsonp',
-            jsonp: 'jsonp', // mongod is expecting the parameter name to be called "jsonp"
+            data:{
+                  _apikey:"bb65hmp1vtvu49shsqjf",
+                  q:JSON.stringify(query)
+            },
+            dataType: 'json',
             success: function (data) {
                 
                 //if the document doesn't exist launch an alert
                 if (typeof (data) === "undefined") {
                     alert("doesn't exist any model ")
                 } else {
-                    var length = data["total_rows"]
-                    
+                    var length = data.length;
+                   
                     //Retrive clusters_tree 
                     for(var j=0; j<length; j++){
-                    var type = data["rows"][j]["type"];
-                    var description = data["rows"][j]["description"];
-                    var id = data["rows"][j]["id"];
-                    var name = data["rows"][j]["name"];
+                    var type = data[j]["type"];
+                    var description = data[j]["description"];
+                    var id = data[j]["id"];
+                    var name = data[j]["name"];
+
                     
                     createDiv(""+j,type, description, id, name);
                 }
@@ -33,27 +40,34 @@ function allModel() {
 
 }
 
-function retriveJsonDocumentById(id) {
+function retriveJsonDocumentById(value) {
     clearDivResult();
     $(function () {
+    var query = {
+           id:"modello".concat(value)
+        }
         $.ajax({ // 'http://localhost:28017/ilariomaiolodb/documents/?filter_id=modello'.concat(id)
-            url:'http://localhost:28017/test/documents/?filter_id=modello'.concat(id),
+             url:'https://api.mongohq.com/databases/testMarco/collections/documents/documents',
             type: 'get',
-            dataType: 'jsonp',
-            jsonp: 'jsonp', // mongod is expecting the parameter name to be called "jsonp"
+            data:{
+                  _apikey:"bb65hmp1vtvu49shsqjf",
+                  q:JSON.stringify(query)
+            },
+            dataType: 'json',
             success: function (data) {
-                
+                data = data[0]
+                console.log(data)
                 //if the document doesn't exist launch an alert
-                if (typeof (data["rows"][0]) === "undefined") {
+                if (typeof (data) === "undefined") {
                     alert("doesn't exist a model with id : " + id)
                 } else {
 
                     //Retrive clusters_tree 
-                    var clustersTree = data["rows"][0]["clusters_tree"];
-                    var type = data["rows"][0]["type"];
-                    var description = data["rows"][0]["description"];
-                    var id = data["rows"][0]["id"];
-                    var name = data["rows"][0]["name"];
+                    var clustersTree = data["clusters_tree"];
+                    var type = data["type"];
+                    var description = data["description"];
+                    var id = data["id"];
+                    var name = data["name"];
 
                     //Print tree
                     createTree(clustersTree, type, description, id, name);
